@@ -62,7 +62,9 @@ install.packages(c("dplyr", "caret", "pROC", "glmnet"))
 
 ## Future Improvements
 
--    Improve Model Differentiation: The logistic regression model struggles to distinguish between popular and unpopular songs, as shown by the high number of false positives and false negatives. Addressing this issue could improve predictive accuracy.
+-    Improve Model Differentiation: The logistic regression model struggles to distinguish between popular and unpopular songs, as shown by the high number of false positives and false negatives from the confusion matrix and by the high misclassification rates. Addressing this issue could improve predictive accuracy.
+
+-    Increase ROC Curve Performance: The current ROC curve suggests that the model is not performing much better than random guessing. To improve this, more advanced models need to be considered.
 
 -    Explore More Complex Models: Implement more advanced models such as neural networks or support vector machines (SVMs) to better capture nonlinear relationships in the data.
 
