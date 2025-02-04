@@ -2,19 +2,21 @@
 
 ## Overview
 
-This project applies logistic regression to predict song popularity based on different song features. The dataset consists of numerical attributes such as danceability, energy, and tempo. The model classifies songs as popular or not based on the song features.
+What makes a song go viral? In this project, I analyze audio features (e.g., danceability, energy, tempo) and predict whether a song will be popular or not using logistic regression. This project demonstrates my ability to apply machine learning in the music domain.
 
 ## Project Structure
 
 ```         
 ├── data/                        # Contains CSV files with song features and popularity labels
+│   ├── acoustic_features.csv    # Raw song feature data
+│   ├── song_pop.csv             # Popularity labels (1 = popular, 0 = not popular)
 ├── scripts/
-│   ├── data_preprocessing.R     # Functions for loading and preprocessing data
-│   ├── logistic_regression_model.R  # Training and prediction functions
-│   ├── evaluation.R             # Model evaluation function
+│   ├── data_preprocessing.R     # Loads and preprocesses data
+│   ├── logistic_regression_model.R  # Trains and tests logistic regression model
+│   ├── evaluation.R             # Generates confusion matrix, accuracy, and ROC curves
 ├── plots/
-│   ├── roc.R                    # ROC curve plot
-│   main.R                       # Main script to execute the pipeline
+│   ├── roc.R                    # ROC curve plot to evaluate model performance
+│   main.R                       # Main pipeline: loads data, trains the model, and evaluates results
 └── README.md                    # Project documentation
 ```
 
@@ -44,9 +46,7 @@ install.packages(c("dplyr", "caret", "pROC", "glmnet"))
 
     -   Train a logistic regression model
 
-    -   Evaluate the model using misclassification rate and ROC curves
-
-    -   Print performance metrics
+    -   Evaluate the model using misclassification rate, confusion matrix and ROC curves
 
 ## Model & Evaluation
 
@@ -62,11 +62,13 @@ install.packages(c("dplyr", "caret", "pROC", "glmnet"))
 
 ## Future Improvements
 
--   Evaluate the data as it could be biased and unbalanced.
+-    Improve Model Differentiation: The logistic regression model struggles to distinguish between popular and unpopular songs, as shown by the high number of false positives and false negatives. Addressing this issue could improve predictive accuracy.
 
--   Improve model accuracy
+-    Explore More Complex Models: Implement more advanced models such as neural networks or support vector machines (SVMs) to better capture nonlinear relationships in the data.
 
--   Consider other less simple ML models such as Neural Networks or Support Vector Machines (SVMs)
+-    Investigate More Features: Investigate additional features beyond audio attributes, such as artist popularity or release year to enhance model performance.
+
+-    Basis Function Expansion: Utilize polynomial methods to extend logistic regression's capacity for capturing complex patterns in the data.
 
 ## Author
 
